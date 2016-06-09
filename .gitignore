@@ -14,3 +14,4 @@
 npm-debug.log
 
 client/node_modules
+app/assets/javascripts/bundle.js
