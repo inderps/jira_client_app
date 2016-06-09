@@ -1,0 +1,2 @@
+rails: rails s -b 0.0.0.0
+hot-assets: sh -c '(cd client && npm run dev)'
