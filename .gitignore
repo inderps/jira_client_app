@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 npm-debug.log
+.idea
 
 client/node_modules
 app/assets/javascripts/bundle.js
