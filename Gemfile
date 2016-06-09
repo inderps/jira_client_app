@@ -13,7 +13,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails', '~> 3.4'
   gem 'pry'
 end
 
@@ -26,3 +26,5 @@ group :development do
 end
 
 gem 'foreman'
+gem 'sqlite3'
+gem 'her'
