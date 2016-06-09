@@ -11,6 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
-
+npm-debug.log
 
 client/node_modules
