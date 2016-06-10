@@ -12,7 +12,10 @@
 !/log/.keep
 /tmp
 npm-debug.log
+client/npm-debug.log*
 .idea
 
+
+db/*.sqlite3
 client/node_modules
 app/assets/javascripts/bundle.js
