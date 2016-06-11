@@ -11,13 +11,12 @@ describe 'Issue' do
 
   describe 'create' do
     let(:user) { FactoryGirl.create(:user) }
-    let(:issue) { Issue.create(title: 'some title', environment: 'some-env', user: user) }
 
-    it 'should create the issue with default status as pending' do
-      expect(issue.status).to eql('pending')
-    end
+    it 'should create the issue with default status as pending and call issue creation worker' do
+      expect(IssueCreationWorker).to receive(:perform_async)
 
-    it 'should trigger a call to Jira API to create issue on save' do
+      issue = Issue.create(title: 'some title', environment: 'some-env', user: user)
+
       expect(issue.status).to eql('pending')
     end
   end

@@ -11,5 +11,6 @@ class Issue < ActiveRecord::Base
   end
 
   def create_issue_on_jira
+    IssueCreationWorker.perform_async(self.id)
   end
 end

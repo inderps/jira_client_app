@@ -1,1 +1,1 @@
-@jira_api = JiraApi.new
+JIRA_API_SERVICE = JiraApi.new

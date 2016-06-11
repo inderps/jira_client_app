@@ -51,3 +51,8 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def create_pending_issue
+  expect(IssueCreationWorker).to receive(:perform_async)
+  FactoryGirl.create(:issue)
+end

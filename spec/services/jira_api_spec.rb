@@ -13,11 +13,11 @@ describe 'JiraApi' do
   describe 'issue' do
     let(:jira_api) { JiraApi.new(stubbed_connection) }
 
-    let(:issue) { FactoryGirl.create(:issue) }
+    let(:issue) { create_pending_issue }
 
     it 'should create a issue on jira' do
 
-      stubbed_connection.should_receive(:basic_auth).with(issue.user.jira_username, issue.user.jira_password)
+      expect(stubbed_connection).to receive(:basic_auth).with(issue.user.jira_username, issue.user.jira_password)
 
       expect(issue.status).to eq('pending')
 
