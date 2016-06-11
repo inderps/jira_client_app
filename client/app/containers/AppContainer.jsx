@@ -2,12 +2,22 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as IssueActions from './../actions/IssueActions';
+import CreateIssueForm from './../components/CreateIssueForm/CreateIssueForm';
+import IssuesList from './../components/IssuesList/IssuesList';
 import './AppContainer.css';
 
 export default function AppContainer(props) {
-  console.log(props);
   return (
-    <div className="app-container">
+    <div className="main-container container">
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="#">Jira Client App</a>
+          </div>
+        </div>
+      </nav>
+      <CreateIssueForm actions={props.actions} />
+      <IssuesList />
     </div>
   );
 }

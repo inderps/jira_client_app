@@ -1,0 +1,11 @@
+.create-issue-form {
+  margin-bottom: 2rem;
+}
+
+.create-issue-form .col-md-12 {
+  text-align: center;
+}
+
+.create-issue-form .form-group {
+  padding-right: 0.5rem;
+}
