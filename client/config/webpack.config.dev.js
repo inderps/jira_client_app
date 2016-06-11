@@ -12,7 +12,7 @@ const PATHS = {
 const plugins = [
   new webpack.NoErrorsPlugin(),
   new webpack.optimize.OccurenceOrderPlugin(),
-  new ExtractTextPlugin('stylesheets/app.css', {
+  new ExtractTextPlugin('./../stylesheets/bundle.css', {
     allChunks: true,
   }),
 ];

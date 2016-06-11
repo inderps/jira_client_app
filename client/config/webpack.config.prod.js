@@ -17,7 +17,7 @@ const plugins = [
       warnings: false,
     },
   }),
-  new ExtractTextPlugin('stylesheets/app.css', {
+  new ExtractTextPlugin('./../stylesheets/bundle.css', {
     allChunks: true,
   }),
 ];
