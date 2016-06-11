@@ -42,6 +42,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.before do
+    User.destroy_all
+    Issue.destroy_all
+  end
 end
 
 Shoulda::Matchers.configure do |config|
@@ -52,7 +57,7 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-def create_pending_issue
+def create_pending_issue(title='some-title', environment='some-environment')
   expect(IssueCreationWorker).to receive(:perform_async)
-  FactoryGirl.create(:issue)
+  FactoryGirl.create(:issue, title: title, environment: environment)
 end
