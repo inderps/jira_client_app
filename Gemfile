@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_girl_rails'
   gem 'pry'
 end
 
@@ -25,6 +27,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'sidekiq'
 gem 'foreman'
 gem 'sqlite3'
 gem 'her'
