@@ -1,0 +1,2 @@
+export const CREATE_ISSUE = 'CREATE_ISSUE';
+export const RELOAD_ISSUES = 'RELOAD_ISSUES';
