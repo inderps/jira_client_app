@@ -16,8 +16,12 @@ export default function AppContainer(props) {
           </div>
         </div>
       </nav>
-      <CreateIssueForm actions={props.actions} />
-      <IssuesList />
+      <CreateIssueForm
+        actions={props.actions}
+        title={props.issueStore.get('title')}
+        environment={props.issueStore.get('environment')}
+      />
+      <IssuesList issues={props.issueStore.get('issues')} />
     </div>
   );
 }

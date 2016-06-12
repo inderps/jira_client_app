@@ -1,2 +1,4 @@
-export const CREATE_ISSUE = 'CREATE_ISSUE';
 export const RELOAD_ISSUES = 'RELOAD_ISSUES';
+export const SET_TITLE = 'SET_TITLE';
+export const SET_ENVIORNMENT = 'SET_ENVIORNMENT';
+export const CLEAR_FIELDS = 'CLEAR_FIELDS';

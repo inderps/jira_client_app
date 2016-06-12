@@ -1,7 +1,9 @@
+import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
+import { reloadIssues } from './actions/IssueActions';
 import AppContainer from './containers/AppContainer';
 
 window.onload = () => {
@@ -14,4 +16,11 @@ window.onload = () => {
       </Provider>,
       rootElement
   );
+
+  store.dispatch(reloadIssues());
+  setInterval(() => {
+    if (store.getState().get('autoRefreshFlag')) {
+      store.dispatch(reloadIssues());
+    }
+  }, 3000);
 };

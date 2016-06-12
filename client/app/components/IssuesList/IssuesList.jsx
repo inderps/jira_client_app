@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-function IssuesList() {
+function IssuesList(props) {
   return (<div className="row issue-list">
     <div className="col-md-12">
       <table className="table table-striped">
@@ -13,12 +13,18 @@ function IssuesList() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Title</td>
-            <td>Title</td>
-            <td><span className="label label-primary">New</span></td>
-            <td>Title</td>
-          </tr>
+          {
+            props.issues.toJS().map((issue, index) =>
+              (
+                  <tr key={index}>
+                    <td>{issue.title}</td>
+                    <td>{issue.environment}</td>
+                    <td><span className="label label-primary">{issue.status}</span></td>
+                    <td>{issue.jira_issue_id}</td>
+                  </tr>
+              )
+            )
+          }
         </tbody>
       </table>
     </div>
@@ -26,7 +32,7 @@ function IssuesList() {
 }
 
 IssuesList.propTypes = {
-  actions: PropTypes.object,
+  issues: PropTypes.object,
 };
 
 export default IssuesList;
