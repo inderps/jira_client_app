@@ -30,5 +30,5 @@ end
 gem 'sidekiq'
 gem 'foreman'
 gem 'sqlite3'
-gem 'her'
+gem 'faraday'
 gem 'twitter-bootstrap-rails'
