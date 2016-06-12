@@ -4,7 +4,7 @@ stubs = Faraday::Adapter::Test::Stubs.new
 stubbed_connection = Faraday.new do |builder|
   builder.adapter :test, stubs do |stub|
     stub.post('/rest/api/2/issue') do |env|
-      [ 200, {}, {id: '1'} ]
+      [ 201, {}, {'id': '1'}.to_json ]
     end
   end
 end

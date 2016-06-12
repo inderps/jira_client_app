@@ -29,8 +29,8 @@ class JiraApi
         }
       }.to_json
     end
-    if response.status == 200
-      issue.jira_issue_id = response.body[:id]
+    if response.status == 201
+      issue.jira_issue_id = JSON.parse(response.body)["id"]
       issue.status = 'completed'
       issue.save
     else
