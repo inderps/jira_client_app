@@ -1,6 +1,14 @@
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
 function IssuesList(props) {
+  function labelClass(status) {
+    if (status === 'completed') {
+      return 'label-success';
+    }
+    return 'label-warning';
+  }
+
   return (<div className="row issue-list">
     <div className="col-md-12">
       <table className="table table-striped">
@@ -19,7 +27,10 @@ function IssuesList(props) {
                   <tr key={index}>
                     <td>{issue.title}</td>
                     <td>{issue.environment}</td>
-                    <td><span className="label label-primary">{issue.status}</span></td>
+                    <td>
+                      <span className={classNames('label', labelClass(issue.status))}>
+                        {issue.status}
+                      </span></td>
                     <td>{issue.jira_issue_id}</td>
                   </tr>
               )
